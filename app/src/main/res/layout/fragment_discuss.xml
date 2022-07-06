@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Fragments.DiscussFragment"
+    android:background="@color/backgroundColor">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/discussRv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_above="@id/view4"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        android:background="@color/backgroundColor"
+        android:paddingBottom="10dp"/>
+
+    <View
+        android:id="@+id/view4"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignBottom="@id/messageEt"
+        android:layout_alignParentStart="true"
+        android:layout_toStartOf="@id/galleryBtn"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="2dp"
+        android:background="@drawable/outline_border_bg"
+        android:layout_alignTop="@id/messageEt" />
+
+    <EditText
+        android:id="@+id/messageEt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@id/view4"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginBottom="8dp"
+        android:layout_toStartOf="@id/sendBtn"
+        android:background="@android:color/transparent"
+        android:ems="10"
+        android:hint="Let's discuss with friends"
+        android:inputType="textMultiLine|textPersonName"
+        android:maxLines="3"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:textColor="@color/textColor1"
+        android:textColorHint="@color/textColor1" />
+
+    <ImageView
+        android:id="@+id/sendBtn"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_alignEnd="@id/view4"
+        android:layout_alignBottom="@+id/messageEt"
+        android:src="@drawable/send"
+        android:layout_marginEnd="13dp"
+        android:layout_marginBottom="10dp"/>
+
+    <ImageView
+        android:id="@+id/galleryBtn"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_alignBottom="@id/view4"
+        android:layout_marginBottom="5dp"
+        android:layout_toStartOf="@id/emojiBtn"
+        android:padding="5dp"
+        android:src="@drawable/gallery" />
+
+    <ImageView
+        android:id="@+id/emojiBtn"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_alignBottom="@id/view4"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="5dp"
+        android:padding="5dp"
+        android:src="@drawable/emoji" />
+
+</RelativeLayout>

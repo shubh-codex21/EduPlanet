@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activities.CreatePostActivity"
+    android:background="@color/white">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:theme="@style/ThemeOverlay.MaterialComponents.Dark.ActionBar">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/blue1"
+            app:popupTheme="@style/Theme.EduPlanet_ELearningApp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/backBtn"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/ic_back"
+                    android:layout_centerVertical="true"/>
+
+                <TextView
+                    android:id="@+id/pageTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="15dp"
+                    android:layout_toEndOf="@id/backBtn"
+                    android:fontFamily="sans-serif"
+                    android:text="New Post"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+            </RelativeLayout>
+
+        </androidx.appcompat.widget.Toolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_below="@id/appBar"
+            android:layout_margin="10dp"
+            android:layout_above="@id/postBtn">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/userProfileImage"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/avatar2"
+                    app:civ_border_color="@color/black"
+                    app:civ_border_width="1dp"/>
+
+                <TextView
+                    android:id="@+id/userName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Shubh Sahu"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="8dp"
+                    android:textColor="@color/textColor1"
+                    android:textSize="16sp"
+                    android:textStyle="bold"/>
+
+            </LinearLayout>
+            
+            <EditText
+                android:id="@+id/postCaption"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:hint="Your caption"
+                android:textColorHint="@color/textColor1"
+                android:textSize="20sp"
+                android:textColor="@color/black"
+                android:gravity="start"
+                android:background="@android:color/transparent"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"/>
+            
+            <ImageView
+                android:id="@+id/postImage"
+                android:layout_width="match_parent"
+                android:layout_height="350dp"
+                android:src="@drawable/image1"
+                android:background="@color/imageBackgroundColor"
+                android:scaleType="fitCenter"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="20dp"
+                android:visibility="gone"/>
+
+        </LinearLayout>
+
+    <Button
+        android:id="@+id/postBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="15dp"
+        android:backgroundTint="@color/light_grey"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:gravity="center"
+        android:text="Post"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:layout_above="@id/view"
+        android:layout_marginBottom="8dp"
+        android:enabled="false"
+        />
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginBottom="3dp"
+        android:background="@color/lineColor"
+        android:layout_above="@id/bottomOptions"/>
+
+    <LinearLayout
+        android:id="@+id/bottomOptions"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginBottom="8dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add to your post"
+            android:textColor="@color/black"
+            android:layout_gravity="center_vertical"
+            android:textSize="16sp"
+            android:textStyle="bold|italic"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="end">
+
+            <ImageView
+                android:id="@+id/addImg"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/gallery"
+                android:layout_gravity="center_vertical"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

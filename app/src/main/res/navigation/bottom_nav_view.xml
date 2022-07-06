@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/bottom_nav_view"
+    app:startDestination="@id/materialFragment">
+
+    <fragment
+        android:id="@+id/materialFragment"
+        android:name="com.example.eduplanet_e_learningapp.Fragments.MaterialFragment"
+        android:label="fragment_material"
+        tools:layout="@layout/fragment_material" />
+    <fragment
+        android:id="@+id/feedFragment"
+        android:name="com.example.eduplanet_e_learningapp.Fragments.FeedFragment"
+        android:label="fragment_feed"
+        tools:layout="@layout/fragment_feed" />
+    <fragment
+        android:id="@+id/discussFragment"
+        android:name="com.example.eduplanet_e_learningapp.Fragments.DiscussFragment"
+        android:label="fragment_discuss"
+        tools:layout="@layout/fragment_discuss" />
+    <fragment
+        android:id="@+id/doubtsFragment"
+        android:name="com.example.eduplanet_e_learningapp.Fragments.DoubtsFragment"
+        android:label="fragment_doubts"
+        tools:layout="@layout/fragment_doubts" />
+    <fragment
+        android:id="@+id/quizFragment"
+        android:name="com.example.eduplanet_e_learningapp.Fragments.QuizFragment"
+        android:label="fragment_quiz"
+        tools:layout="@layout/fragment_quiz" />
+</navigation>

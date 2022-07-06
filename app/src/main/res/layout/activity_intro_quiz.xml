@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".Activities.IntroQuizActivity">
+
+    <com.sasank.roundedhorizontalprogress.RoundedHorizontalProgressBar
+        android:id="@+id/progress_bar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="23dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="15dp"
+        android:indeterminate="false"
+        android:maxHeight="12dp"
+        android:minHeight="12dp"
+        android:progress="20"
+        app:backgroundColor="@color/grey2"
+        app:progressColor="@color/blue1" />
+
+    <TextView
+        android:id="@+id/text1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/progress_bar"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="5dp"
+        android:fontFamily="serif"
+        android:text="Let's check how much do you know..."
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="28sp" />
+
+    <TextView
+        android:id="@+id/question_no"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/text1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:text="Question 1/5"
+        android:textColor="@color/dark_grey"
+        android:textSize="28sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/question"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/question_no"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="8dp"
+        android:gravity="center_horizontal"
+        android:text="What is the Capital of Uttar Pradesh?"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="22sp"
+        android:textStyle="bold|italic" />
+
+    <LinearLayout
+        android:id="@+id/options"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/question"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="10dp"
+        android:orientation="vertical">
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/op_A_card"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_margin="15dp"
+            android:layout_weight="1"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="20dp"
+            app:strokeColor="@color/blue1"
+            app:strokeWidth="4dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/op_title_A"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="5dp"
+                    android:padding="8dp"
+                    android:text="A."
+                    android:textColor="@color/black"
+                    android:textSize="28sp" />
+
+                <TextView
+                    android:id="@+id/option_A"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerInParent="true"
+                    android:gravity="center_horizontal"
+                    android:padding="8dp"
+                    android:text="Lucknow"
+                    android:textAlignment="center"
+                    android:textColor="@color/options_text_color"
+                    android:textSize="20sp"
+                    android:visibility="visible" />
+            </RelativeLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/op_B_card"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_margin="15dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:layout_weight="1"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="20dp"
+            app:strokeColor="@color/blue1"
+            app:strokeWidth="4dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/op_title_B"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="5dp"
+                    android:padding="8dp"
+                    android:text="B."
+                    android:textColor="@color/black"
+                    android:textSize="28sp"
+                    tools:ignore="DuplicateIds" />
+
+                <TextView
+                    android:id="@+id/option_B"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerInParent="true"
+                    android:gravity="center_horizontal"
+                    android:padding="8dp"
+                    android:text="Delhi"
+                    android:textAlignment="center"
+                    android:textColor="@color/options_text_color"
+                    android:textSize="20sp"
+                    android:visibility="visible" />
+            </RelativeLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/op_C_card"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_margin="15dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:layout_weight="1"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="20dp"
+            app:strokeColor="@color/blue1"
+            app:strokeWidth="4dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/op_title_C"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="5dp"
+                    android:padding="8dp"
+                    android:text="C."
+                    android:textColor="@color/black"
+                    android:textSize="28sp"
+                    tools:ignore="DuplicateIds" />
+
+                <TextView
+                    android:id="@+id/option_C"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerInParent="true"
+                    android:gravity="center_horizontal"
+                    android:padding="8dp"
+                    android:text="Patna"
+                    android:textAlignment="center"
+                    android:textColor="@color/options_text_color"
+                    android:textSize="20sp"
+                    android:visibility="visible" />
+            </RelativeLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/op_D_card"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_margin="15dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:layout_weight="1"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="20dp"
+            app:strokeColor="@color/blue1"
+            app:strokeWidth="4dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/op_title_D"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="5dp"
+                    android:padding="8dp"
+                    android:text="D."
+                    android:textColor="@color/black"
+                    android:textSize="28sp"
+                    tools:ignore="DuplicateIds" />
+
+                <TextView
+                    android:id="@+id/option_D"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerInParent="true"
+                    android:padding="8dp"
+                    android:text="Bhopal"
+                    android:textAlignment="center"
+                    android:textColor="@color/options_text_color"
+                    android:textSize="20sp"
+                    android:visibility="visible" />
+            </RelativeLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+    </LinearLayout>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/skipCard"
+        android:layout_width="65dp"
+        android:layout_height="60dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="15dp"
+        android:layout_marginBottom="15dp"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="17dp"
+        app:strokeColor="@color/light_grey"
+        app:strokeWidth="2dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Skip"
+            android:textAlignment="center"
+            android:textColor="@color/dark_grey"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top|center_horizontal"
+            android:layout_marginTop="2dp"
+            android:text="*Only 1"
+            android:textAlignment="center"
+            android:textColor="@color/dark_grey"
+            android:textSize="12sp"
+            android:textStyle="normal" />
+
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/checkAnswerCard"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="15dp"
+        android:layout_toEndOf="@+id/skipCard"
+        app:cardBackgroundColor="@color/light_grey"
+        app:cardCornerRadius="17dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Check the answer"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
+
+    </com.google.android.material.card.MaterialCardView>
+
+
+</RelativeLayout>

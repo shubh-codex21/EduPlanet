@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/material"
+        android:icon="@drawable/ic_material"
+        android:title="Material" />
+
+    <item
+        android:id="@+id/feed"
+        android:icon="@drawable/ic_feed"
+        android:title="Feed" />
+
+    <item
+        android:id="@+id/discuss"
+        android:icon="@drawable/ic_discuss"
+        android:title="Discuss" />
+
+    <item
+        android:id="@+id/doubts"
+        android:icon="@drawable/ic_doubts"
+        android:title="Doubts" />
+
+    <item
+        android:id="@+id/quiz"
+        android:icon="@drawable/ic_quiz"
+        android:title="Quiz" />
+
+</menu>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@color/backgroundColor"
+    >
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/sendedUserImage"
+        android:layout_width="42dp"
+        android:layout_height="42dp"
+        android:src="@drawable/avatar2"
+        android:layout_alignParentEnd="true"
+        android:layout_alignBottom="@id/relative_layout"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/relative_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="8dp"
+        android:layout_toStartOf="@id/sendedUserImage"
+        android:background="@drawable/message_sended_bg"
+        android:padding="5dp"
+        android:paddingStart="15dp"
+        android:paddingEnd="10dp">
+
+        <TextView
+            android:id="@+id/sendedUserName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Silent Bro"
+            android:fontFamily="@font/roboto_medium"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/sendedImage"
+            android:layout_width="270dp"
+            android:layout_height="270dp"
+            android:layout_marginTop="3dp"
+            android:background="@color/imageBackgroundColor"
+            android:src="@drawable/image5"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@id/sendingMessage"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/sendedUserName" />
+
+        <TextView
+            android:id="@+id/sendingMessage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxWidth="280dp"
+            android:visibility="visible"
+            android:text="Where are you?"
+            android:textColor="@color/white"
+            app:layout_constraintStart_toStartOf="@id/sendedUserName"
+            app:layout_constraintTop_toBottomOf="@id/sendedImage" />
+
+        <TextView
+            android:id="@+id/messagedTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/sendingMessage"
+            android:layout_alignStart="@id/sendingMessage"
+            android:text="12:04 PM"
+            android:textColor="@color/grey2"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/sendingMessage" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</RelativeLayout>

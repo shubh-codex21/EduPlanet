@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginTop="3dp">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/userImage"
+            android:layout_width="37dp"
+            android:layout_height="37dp"
+            android:src="@drawable/avatar2"
+            app:civ_border_color="@color/blue1"
+            app:civ_border_width="1dp" />
+
+        <TextView
+            android:id="@+id/userName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@id/userImage"
+            android:layout_marginStart="5dp"
+            android:layout_toEndOf="@id/userImage"
+            android:fontFamily="@font/roboto_medium"
+            android:text="Developer of EduPlanet"
+            android:textColor="@color/black"
+            android:textSize="12sp"/>
+
+        <TextView
+            android:id="@+id/doubtedAt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/userName"
+            android:layout_marginStart="5dp"
+            android:layout_toEndOf="@id/userImage"
+            android:fontFamily="@font/roboto_medium"
+            android:text="2 day ago"
+            android:textColor="@color/grey1"
+            android:textSize="10sp"/>
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="start"
+        android:layout_marginTop="3dp"
+        android:text="What are the dynamic arrays?"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_below="@id/relativeLayout"/>
+
+    <TextView
+        android:id="@+id/description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/title"
+        android:gravity="start"
+
+        android:text="What are the dynamic arrays. You can give the answer in image form. What are the dynamic arrays. What are the dynamic arrays."
+        android:textColor="@color/textColor1"
+        android:textSize="14sp"
+        />
+
+    <com.jama.carouselview.CarouselView
+        android:id="@+id/doubtImageCarousel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/description"
+        android:background="@color/imageBackgroundColor"
+        android:layout_marginTop="5dp"
+        app:enableSnapping="true"
+        app:scaleOnScroll="true"
+        app:setAutoPlay="false"
+        app:carouselOffset="center"
+        app:indicatorAnimationType="slide"
+        app:indicatorRadius="5"
+        app:indicatorPadding="5"
+        app:indicatorSelectedColor="@color/blue1"
+        app:indicatorUnselectedColor="@color/grey1"
+        app:size="5"
+        app:resource="@layout/doubt_carousel_itemview" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="47dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:orientation="horizontal"
+        android:layout_below="@id/doubtImageCarousel">
+
+        <ImageView
+            android:id="@+id/upvote"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:padding="7dp"
+            android:src="@drawable/upvote"/>
+
+        <TextView
+            android:id="@+id/noOfUpvotes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingEnd="7dp"
+            android:paddingTop="7dp"
+            android:paddingBottom="7dp"
+            android:textColor="@color/textColor1"
+            android:text="10k"
+            android:layout_gravity="center_vertical"
+            android:textSize="14sp"/>
+
+        <ImageView
+            android:id="@+id/answers"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:padding="7dp"
+            android:src="@drawable/answer" />
+
+        <TextView
+            android:id="@+id/noOfAnswer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingEnd="7dp"
+            android:paddingTop="7dp"
+            android:paddingBottom="7dp"
+            android:textColor="@color/blue2"
+            android:text="View 4983 Answers"
+            android:layout_gravity="center_vertical"
+            android:textSize="14sp"/>
+
+        <ImageView
+            android:id="@+id/save"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:padding="7dp"
+            android:src="@drawable/save2" />
+
+        <TextView
+            android:id="@+id/saveTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingEnd="7dp"
+            android:paddingTop="7dp"
+            android:paddingBottom="7dp"
+            android:textColor="@color/textColor1"
+            android:text="Save"
+            android:layout_gravity="center_vertical"
+            android:textSize="14sp"/>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/lineColor"
+        android:layout_below="@id/linearLayout"
+        android:layout_marginTop="2dp"/>
+
+</RelativeLayout>

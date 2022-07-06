@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".Activities.CommentActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:theme="@style/ThemeOverlay.MaterialComponents.Dark.ActionBar">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/blue1"
+            app:popupTheme="@style/Theme.EduPlanet_ELearningApp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/backBtn"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/ic_back"
+                    android:layout_centerVertical="true"/>
+
+                <TextView
+                    android:id="@+id/pageTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="15dp"
+                    android:layout_toEndOf="@id/backBtn"
+                    android:fontFamily="sans-serif"
+                    android:text="Comments"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+            </RelativeLayout>
+
+        </androidx.appcompat.widget.Toolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <ImageView
+        android:id="@+id/postImage"
+        android:layout_width="wrap_content"
+        android:layout_height="170dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_centerHorizontal="true"
+        android:scaleType="fitCenter"
+        android:src="@drawable/image3"
+        android:background="@color/black"
+        android:layout_below="@id/appBar"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/postImage">
+
+        <View
+            android:id="@+id/view2"
+            android:layout_width="1dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="@+id/postUserImage"
+            app:layout_constraintEnd_toEndOf="@+id/postUserImage"
+            app:layout_constraintHorizontal_bias="0.71"
+            app:layout_constraintStart_toStartOf="@+id/postUserImage"
+            app:layout_constraintTop_toTopOf="@+id/postUserImage" />
+
+        <TextView
+            android:id="@+id/postUserName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="7dp"
+            android:background="@drawable/right_corner_round_bg"
+            android:fontFamily="@font/roboto_medium"
+            android:paddingStart="10dp"
+            android:paddingTop="3dp"
+            android:paddingEnd="5dp"
+            android:paddingBottom="3dp"
+            android:text="Silent Bro"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="@+id/postUserImage"
+            app:layout_constraintStart_toEndOf="@+id/view2"
+            app:layout_constraintTop_toTopOf="@+id/postUserImage" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/postUserImage"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginBottom="8dp"
+            android:src="@drawable/avatar2"
+            app:civ_border_color="@color/white"
+            app:civ_border_width="3dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/postCaption"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Who is this in the below picture. Is someone sad or depressed? Like this post if you love it!!!"
+        android:layout_alignStart="@id/postImage"
+        android:layout_alignEnd="@id/postImage"
+        android:layout_below="@id/postImage"
+        android:gravity="start"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="4dp"
+        android:textColor="@color/black" />
+
+    <View
+        android:id="@+id/view3"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/lineColor"
+        android:layout_below="@id/postCaption"
+        android:layout_marginTop="5dp" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/view3"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_above="@id/view4"
+        android:fillViewport="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/commentsRv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"/>
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+    <View
+        android:id="@+id/view4"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignBottom="@id/commentEt"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/outline_border_bg"
+        android:layout_alignTop="@id/commentEt"/>
+
+    <EditText
+        android:id="@+id/commentEt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@id/view4"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginBottom="8dp"
+        android:layout_toStartOf="@id/commentPostBtn"
+        android:background="@android:color/transparent"
+        android:ems="10"
+        android:hint="Write your comment"
+        android:inputType="textMultiLine|textPersonName"
+        android:maxLines="3"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:textColor="@color/textColor1"
+        android:textColorHint="@color/textColor1" />
+
+    <ImageView
+        android:id="@+id/commentPostBtn"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_alignTop="@id/commentEt"
+        android:layout_alignEnd="@id/view4"
+        android:layout_alignBottom="@+id/commentEt"
+        android:src="@drawable/send"
+        android:layout_marginEnd="13dp"/>
+
+
+</RelativeLayout>

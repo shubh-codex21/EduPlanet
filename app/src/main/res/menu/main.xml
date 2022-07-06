@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item android:title="User">
+        <menu>
+
+            <item android:id="@+id/my_profile"
+                android:title="My Profile"
+                android:icon="@drawable/avatar3"/>
+
+            <item
+                android:id="@+id/my_performance"
+                android:title="My Performance"
+                android:icon="@drawable/ic_performance"/>
+
+            <item
+                android:id="@+id/invite_friends"
+                android:title="Invite Friends"
+                android:icon="@drawable/ic_invite_friends"/>
+
+        </menu>
+    </item>
+
+    <item android:title="Material">
+        <menu>
+
+            <item
+                android:id="@+id/wishlist"
+                android:title="Wishlist"
+                android:icon="@drawable/ic_wishlist"/>
+
+            <item
+                android:id="@+id/notes"
+                android:title="Notes"
+                android:icon="@drawable/ic_notes"/>
+
+            <item
+                android:id="@+id/downloads"
+                android:title="Downloads"
+                android:icon="@drawable/ic_downloads"/>
+
+        </menu>
+    </item>
+
+    <item android:title="Settings">
+        <menu>
+
+            <item
+                android:id="@+id/terms_and_conditions"
+                android:title="Terms and Conditions"
+                android:icon="@drawable/ic_terms_and_conditions"/>
+
+            <item
+                android:id="@+id/privacy_policy"
+                android:title="Privacy Policy"
+                android:icon="@drawable/ic_privacy_policy"/>
+
+            <item
+                android:id="@+id/feedback"
+                android:title="Feedback"
+                android:icon="@drawable/ic_feedback"/>
+
+            <item
+                android:id="@+id/contact_us"
+                android:title="Contact us"
+                android:icon="@drawable/ic_contact_us"/>
+
+            <item
+                android:id="@+id/logout"
+                android:title="Logout"
+                android:icon="@drawable/ic_exit"/>
+
+        </menu>
+    </item>
+
+</menu>

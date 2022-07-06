@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activities.GiveAnswerActivity"
+    android:background="@color/white">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:theme="@style/ThemeOverlay.MaterialComponents.Dark.ActionBar">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/blue1"
+            app:popupTheme="@style/Theme.EduPlanet_ELearningApp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/pageTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:fontFamily="sans-serif"
+                    android:text="Give Answer"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/postAnswerBtn"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/tick"
+                    android:tint="@color/light_grey"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="15dp"
+                    android:layout_centerVertical="true" />
+
+            </RelativeLayout>
+
+        </androidx.appcompat.widget.Toolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <TextView
+        android:id="@+id/doubtTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="What is Mass and Weight?"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:gravity="start"
+        android:layout_marginTop="3dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:textSize="22sp"
+        android:layout_below="@id/appBar"/>
+
+    <TextView
+        android:id="@+id/doubtDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="What is Mass and Weight? And what is it work and how is it work?"
+        android:textColor="@color/black"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:gravity="start"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:textSize="16sp"
+        android:layout_below="@id/doubtTitle"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+        android:id="@+id/textInputLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/doubtDescription"
+        android:layout_marginTop="15dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:hint="Your Answer"
+        app:helperText="Required*"
+        app:helperTextTextColor="@color/red"
+        app:counterEnabled="true"
+        app:counterMaxLength="10000"
+        app:endIconMode="clear_text">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/answer"
+            android:layout_width="match_parent"
+            android:layout_height="400dp"
+            android:maxLength="10000"
+            android:textColorHint="@color/textColor1"
+            android:gravity="start|top"
+            android:textColor="@color/textColor1"
+            android:textSize="16sp"
+            android:inputType="textMultiLine"
+            android:maxLines="20"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="15dp"
+        app:cardCornerRadius="5dp"
+        app:cardBackgroundColor="@color/white"
+        android:layout_below="@id/textInputLayout"
+        app:strokeWidth="1dp"
+        app:strokeColor="#A5A5A5">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingBottom="10dp">
+
+            <TextView
+                android:id="@+id/text1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Attachments"
+                android:textColor="@color/black"
+                android:textSize="18dp"
+                android:textStyle="bold|italic"
+                android:paddingStart="10dp"
+                android:paddingTop="6dp"/>
+
+            <ImageView
+                android:id="@+id/addAttachment"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/add"
+                android:layout_alignTop="@id/text1"
+                android:layout_alignBottom="@id/text1"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/attachmentRv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/text1" />
+
+        </RelativeLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    </RelativeLayout>
+</ScrollView>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="10dp"
+        >
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/commentedUserImage"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:src="@drawable/avatar2"
+            app:civ_border_color="@color/blue1"
+            app:civ_border_width="1dp" />
+
+<!--        <TextView-->
+<!--            android:id="@+id/commentedUserName"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_gravity="start"-->
+<!--            android:layout_marginStart="10dp"-->
+<!--            android:text="Silent Bro"-->
+<!--            android:textColor="@color/black"-->
+<!--            android:textStyle="bold"-->
+<!--            android:layout_alignTop="@id/commentedUserImage"-->
+<!--            android:layout_toEndOf="@id/commentedUserImage" />-->
+
+        <TextView
+            android:id="@+id/comment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:layout_marginStart="10dp"
+            android:text="Silent Bro Nice pic. Where are you?"
+            android:textColor="@color/black"
+            android:layout_toEndOf="@id/commentedUserImage"
+            android:layout_alignTop="@id/commentedUserImage"
+            android:layout_marginTop="3dp"/>
+
+        <TextView
+            android:id="@+id/commentedTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:layout_marginStart="10dp"
+            android:text="12:04"
+            android:textColor="@color/grey1"
+            android:layout_toEndOf="@id/commentedUserImage"
+            android:layout_below="@id/comment"
+            android:textSize="12sp"/>
+
+    </RelativeLayout>
+</LinearLayout>

@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".Activities.IntroQuizScoreActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:id="@+id/score_board_rela"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/imageView"
+                    android:layout_width="160dp"
+                    android:layout_height="160dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="20dp"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/trophy" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/imageView"
+                    android:layout_centerInParent="true"
+                    android:layout_marginTop="5dp"
+                    android:fontFamily="sans-serif-black"
+                    android:text="Congratulations!"
+                    android:textColor="@color/black"
+                    android:textSize="30sp"
+                    android:textStyle="bold|italic" />
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/your_score_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/score_board_rela"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:text="YOUR SCORE"
+                android:textColor="@color/black"
+                android:textSize="30sp"
+                android:textStyle="normal" />
+
+            <RelativeLayout
+                android:id="@+id/score_progress_rela"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/your_score_tv"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp">
+
+                <com.mikhaellopez.circularprogressbar.CircularProgressBar
+                    android:id="@+id/score_progress"
+                    android:layout_width="210dp"
+                    android:layout_height="210dp"
+                    android:layout_centerHorizontal="true"
+                    app:cpb_background_progressbar_color="@color/red"
+                    app:cpb_background_progressbar_width="14dp"
+                    app:cpb_indeterminate_mode="false"
+                    app:cpb_progress="10"
+                    app:cpb_progress_direction="to_right"
+                    app:cpb_progress_max="20"
+                    app:cpb_progressbar_color="#00B512"
+                    app:cpb_progressbar_width="14dp"
+                    app:cpb_round_border="false" />
+
+                <TextView
+                    android:id="@+id/score"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="15/20"
+                    android:textColor="@color/black"
+                    android:textSize="35sp"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/rank"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/score_progress_rela"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:fontFamily="sans-serif-black"
+                android:text="You are in top 50%"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="22dp" />
+
+        </RelativeLayout>
+    </ScrollView>
+
+    <Button
+        android:id="@+id/finishBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="10dp"
+        android:letterSpacing="0.05"
+        android:text="Finish"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        app:backgroundTint="@color/blue2" />
+
+
+</RelativeLayout>
