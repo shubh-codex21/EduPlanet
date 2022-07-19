@@ -55,7 +55,6 @@ public class UserFeedFragment extends Fragment {
         binding.feedRv.setAdapter(adapter);
         adapter.notifyDataSetChanged();
 
-
         return binding.getRoot();
     }
 

@@ -13,6 +13,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.eduplanet_e_learningapp.Activities.CommentActivity;
+import com.example.eduplanet_e_learningapp.Activities.ShowingProfileActivity;
+import com.example.eduplanet_e_learningapp.Activities.UserProfileActivity;
 import com.example.eduplanet_e_learningapp.Modals.Post;
 import com.example.eduplanet_e_learningapp.Modals.User;
 import com.example.eduplanet_e_learningapp.R;
@@ -181,8 +183,8 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder> 
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(context, CommentActivity.class);
-                intent.putExtra("postId",post.getPostId());
-                intent.putExtra("postedBy",post.getPostedBy());
+                intent.putExtra("postId", post.getPostId());
+                intent.putExtra("postedBy", post.getPostedBy());
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 context.startActivity(intent);
             }
@@ -192,8 +194,8 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder> 
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(context, CommentActivity.class);
-                intent.putExtra("postId",post.getPostId());
-                intent.putExtra("postedBy",post.getPostedBy());
+                intent.putExtra("postId", post.getPostId());
+                intent.putExtra("postedBy", post.getPostedBy());
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 context.startActivity(intent);
             }
@@ -220,6 +222,20 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder> 
             }
         });
 
+        holder.binding.profileLinear.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (post.getPostedBy().equals(FirebaseAuth.getInstance().getUid())) {
+                    context.startActivity(new Intent(context, UserProfileActivity.class));
+
+                } else {
+                    Intent intent = new Intent(context, ShowingProfileActivity.class);
+                    intent.putExtra("profileId", post.getPostedBy());
+                    context.startActivity(intent);
+                }
+            }
+        });
+
     }
 
     @Override
@@ -227,9 +243,9 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder> 
         return postArraylist.size();
     }
 
-
     public class ViewHolder extends RecyclerView.ViewHolder {
         PostItemviewBinding binding;
+
         public ViewHolder(@NonNull @NotNull View itemView) {
             super(itemView);
             binding = PostItemviewBinding.bind(itemView);

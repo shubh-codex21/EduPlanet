@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -14,25 +14,34 @@
         android:layout_marginBottom="4dp"
         android:orientation="horizontal">
 
-        <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/profileImage"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:src="@drawable/image1"
-            app:civ_border_color="@color/blue2"
-            app:civ_border_width="2dp" />
-
-        <TextView
-            android:id="@+id/profileName"
+        <LinearLayout
+            android:id="@+id/profileLinear"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:layout_marginStart="5dp"
             android:layout_weight="1"
-            android:text="Silent Bro"
-            android:textColor="@color/textColor1"
-            android:textStyle="bold"
-            android:fontFamily="@font/roboto_medium"/>
+            android:orientation="horizontal">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/profileImage"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/image1"
+                app:civ_border_width="1dp"
+                app:civ_border_color="@color/blue1"/>
+
+            <TextView
+                android:id="@+id/profileName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="5dp"
+                android:fontFamily="@font/roboto_medium"
+                android:gravity="center_vertical"
+                android:text="Silent Bro"
+                android:textColor="@color/textColor1"
+                android:textStyle="bold" />
+
+        </LinearLayout>
 
         <ImageView
             android:id="@+id/moreOptions"
@@ -47,22 +56,21 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        >
+        android:layout_height="wrap_content">
 
-       <TextView
-           android:id="@+id/caption"
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           android:text="Who is this in the below picture. Is someone sad or depressed? Like this post if you love it!!!"
-           android:textColor="@color/black"
-           android:textSize="14sp"
-           android:gravity="start"
-           android:visibility="gone"
-           android:layout_marginTop="5dp"
-           android:layout_marginStart="8dp"
-           android:layout_marginEnd="8dp"
-           android:layout_marginBottom="5dp"/>
+        <TextView
+            android:id="@+id/caption"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="5dp"
+            android:gravity="start"
+            android:text="Who is this in the below picture. Is someone sad or depressed? Like this post if you love it!!!"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:visibility="gone" />
 
     </RelativeLayout>
 
@@ -75,23 +83,23 @@
             android:id="@+id/post"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
             android:background="@color/imageBackgroundColor"
             android:scaleType="fitCenter"
-            android:src="@drawable/image1"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentBottom="true"/>
+            android:src="@drawable/image1" />
 
         <ImageView
             android:id="@+id/save"
             android:layout_width="26dp"
             android:layout_height="wrap_content"
-            android:src="@drawable/save"
-            android:tint="@color/white"
-            android:layout_alignParentEnd="true"
             android:layout_alignParentTop="true"
-            android:layout_marginEnd="15dp"/>
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="15dp"
+            android:src="@drawable/save"
+            android:tint="@color/white" />
 
     </RelativeLayout>
 
@@ -114,13 +122,13 @@
             android:id="@+id/noOfLikes"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingEnd="7dp"
-            android:paddingTop="7dp"
-            android:paddingBottom="7dp"
-            android:textColor="@color/textColor1"
-            android:text="10k"
             android:layout_gravity="center_vertical"
-            android:textSize="14sp"/>
+            android:paddingTop="7dp"
+            android:paddingEnd="7dp"
+            android:paddingBottom="7dp"
+            android:text="10k"
+            android:textColor="@color/textColor1"
+            android:textSize="14sp" />
 
         <ImageView
             android:id="@+id/comment"
@@ -134,13 +142,13 @@
             android:id="@+id/noOfComments"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingEnd="7dp"
-            android:paddingTop="7dp"
-            android:paddingBottom="7dp"
-            android:textColor="@color/textColor1"
-            android:text="1486"
             android:layout_gravity="center_vertical"
-            android:textSize="14sp"/>
+            android:paddingTop="7dp"
+            android:paddingEnd="7dp"
+            android:paddingBottom="7dp"
+            android:text="1486"
+            android:textColor="@color/textColor1"
+            android:textSize="14sp" />
 
         <ImageView
             android:id="@+id/share"

@@ -55,7 +55,7 @@
         android:text="Next"
         android:textAllCaps="false"
         app:backgroundTint="@color/blue2"
-        android:textColor="@color/white"/>
-
+        android:textColor="@color/white"
+        android:fontFamily="@font/roboto_medium"/>
 
 </RelativeLayout>

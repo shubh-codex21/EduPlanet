@@ -25,10 +25,12 @@
     <color name="options_text_color">#3A3939</color>
     <color name="options_card_color">#CCCCCC</color>
     <color name="textColor1">#464646</color>
+    <color name="textColor2">#7E7C7C</color>
     <color name="lineColor">#CECECE</color>
     <color name="iconTint">#00363636</color>
     <color name="imageBackgroundColor">#0E0E0E</color>
     <color name="backgroundColor">#f1f1f1</color>
+    <color name="linkColorBlue">#3366BB</color>
 
     <color name="chroma_green">#00b140</color>
     <color name="green">#00C136</color>

@@ -16,6 +16,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.eduplanet_e_learningapp.Activities.DoubtAnswersActivity;
+import com.example.eduplanet_e_learningapp.Activities.ShowingProfileActivity;
+import com.example.eduplanet_e_learningapp.Activities.UserProfileActivity;
 import com.example.eduplanet_e_learningapp.Modals.Doubt;
 import com.example.eduplanet_e_learningapp.Modals.User;
 import com.example.eduplanet_e_learningapp.R;
@@ -151,8 +153,8 @@ public class DoubtsAdapter extends RecyclerView.Adapter<DoubtsAdapter.ViewHolder
         holder.binding.answers.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(context,DoubtAnswersActivity.class);
-                intent.putExtra("doubtId",doubt.getDoubtId());
+                Intent intent = new Intent(context, DoubtAnswersActivity.class);
+                intent.putExtra("doubtId", doubt.getDoubtId());
                 context.startActivity(intent);
             }
         });
@@ -160,8 +162,8 @@ public class DoubtsAdapter extends RecyclerView.Adapter<DoubtsAdapter.ViewHolder
         holder.binding.noOfAnswer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(context,DoubtAnswersActivity.class);
-                intent.putExtra("doubtId",doubt.getDoubtId());
+                Intent intent = new Intent(context, DoubtAnswersActivity.class);
+                intent.putExtra("doubtId", doubt.getDoubtId());
                 context.startActivity(intent);
             }
         });
@@ -173,6 +175,20 @@ public class DoubtsAdapter extends RecyclerView.Adapter<DoubtsAdapter.ViewHolder
             }
         });
 
+        holder.binding.profileRela.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (doubt.getDoubtedBy().equals(FirebaseAuth.getInstance().getUid())) {
+                    context.startActivity(new Intent(context, UserProfileActivity.class));
+                } else {
+                    Intent intent = new Intent(context, ShowingProfileActivity.class);
+                    intent.putExtra("profileId", doubt.getDoubtedBy());
+                    context.startActivity(intent);
+                }
+
+            }
+        });
+
     }
 
     @Override
@@ -180,7 +196,7 @@ public class DoubtsAdapter extends RecyclerView.Adapter<DoubtsAdapter.ViewHolder
         return doubts.size();
     }
 
-    public void setFilteredList(List<Doubt> filteredList){
+    public void setFilteredList(List<Doubt> filteredList) {
         this.doubts = filteredList;
         notifyDataSetChanged();
     }

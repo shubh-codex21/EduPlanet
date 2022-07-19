@@ -11,7 +11,11 @@
         android:roundIcon="@mipmap/app_logo_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.EduPlanet_ELearningApp">
-        <activity android:name=".Activities.UserProfileActivity"/>
+        <activity android:name=".Activities.ChangePasswordActivity"></activity>
+        <activity android:name=".Activities.SearchActivity" />
+        <activity android:name=".Activities.ShowingProfileActivity" />
+        <activity android:name=".Activities.EditProfileActivity" />
+        <activity android:name=".Activities.UserProfileActivity" />
         <activity android:name=".Activities.GiveAnswerActivity" />
         <activity android:name=".Activities.ShowAttachImgActivity" />
         <activity android:name=".Activities.DoubtAnswersActivity" />

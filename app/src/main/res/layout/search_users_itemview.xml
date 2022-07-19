@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/profileImage"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/avatar2"
+        android:layout_marginTop="4dp"
+        android:layout_marginStart="8dp"
+        android:scaleType="centerCrop"
+        app:civ_border_color="@color/blue1"
+        app:civ_border_width="1dp"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_toEndOf="@id/profileImage"
+        android:layout_alignTop="@id/profileImage"
+        android:layout_marginTop="4dp"
+        android:layout_marginStart="8dp">
+
+        <TextView
+            android:id="@+id/userName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Developer"
+            android:textColor="@color/textColor1"
+            android:textAlignment="textStart"
+            android:fontFamily="@font/roboto_medium"
+            android:textStyle="bold"
+            android:textSize="16.5sp"/>
+
+        <TextView
+            android:id="@+id/userClass"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Class 9"
+            android:textColor="@color/textColor1"
+            android:textAlignment="textStart"
+            android:fontFamily="@font/roboto"
+            android:textSize="15sp"/>
+
+    </LinearLayout>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/followBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="10dp"
+        app:cardBackgroundColor="@color/blue1"
+        app:cardCornerRadius="20dp"
+        android:layout_centerVertical="true">
+
+        <TextView
+            android:id="@+id/followTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Follow"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"/>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/profileImage"
+        android:background="@color/lineColor"
+        android:layout_marginTop="4dp"
+        android:layout_marginStart="6dp"
+        android:layout_marginEnd="6dp"/>
+
+</RelativeLayout>

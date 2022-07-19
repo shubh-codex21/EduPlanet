@@ -1,6 +1,7 @@
 package com.example.eduplanet_e_learningapp.Adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,6 +11,8 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.example.eduplanet_e_learningapp.Activities.ShowingProfileActivity;
+import com.example.eduplanet_e_learningapp.Activities.UserProfileActivity;
 import com.example.eduplanet_e_learningapp.Modals.Message;
 import com.example.eduplanet_e_learningapp.Modals.User;
 import com.example.eduplanet_e_learningapp.R;
@@ -97,6 +100,21 @@ public class DiscussAdapter extends RecyclerView.Adapter {
                             }
                         }
                     });
+
+                viewHolder.binding.sendedUserImage.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                            context.startActivity(new Intent(context, UserProfileActivity.class));
+                    }
+                });
+
+                viewHolder.binding.sendedUserName.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        context.startActivity(new Intent(context, UserProfileActivity.class));
+                    }
+                });
+
         } else {
             ReceivedViewHolder viewHolder = (ReceivedViewHolder) holder;
 
@@ -137,6 +155,32 @@ public class DiscussAdapter extends RecyclerView.Adapter {
                             }
                         }
                     });
+
+            viewHolder.binding.messagedUserImage.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if (message.getMessagedBy().equals(FirebaseAuth.getInstance().getUid())){
+                        context.startActivity(new Intent(context, UserProfileActivity.class));
+                    } else {
+                        Intent intent = new Intent(context, ShowingProfileActivity.class);
+                        intent.putExtra("profileId",message.getMessagedBy());
+                        context.startActivity(intent);
+                    }
+                }
+            });
+
+            viewHolder.binding.messageUserName.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if (message.getMessagedBy().equals(FirebaseAuth.getInstance().getUid())){
+                        context.startActivity(new Intent(context, UserProfileActivity.class));
+                    } else {
+                        Intent intent = new Intent(context, ShowingProfileActivity.class);
+                        intent.putExtra("profileId",message.getMessagedBy());
+                        context.startActivity(intent);
+                    }
+                }
+            });
         }
     }
 

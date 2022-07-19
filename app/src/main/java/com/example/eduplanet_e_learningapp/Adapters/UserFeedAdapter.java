@@ -60,7 +60,7 @@ public class UserFeedAdapter extends RecyclerView.Adapter<UserFeedAdapter.ViewHo
                 if (value.exists()) {
                     User user = value.toObject(User.class);
                     holder.binding.profileName.setText(user.getUsername());
-                    Glide.with(context).load(user.getUserImage())
+                    Glide.with(context.getApplicationContext()).load(user.getUserImage())
                             .into(holder.binding.profileImage);
                 }
             }

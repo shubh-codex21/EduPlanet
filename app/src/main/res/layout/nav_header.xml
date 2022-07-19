@@ -3,7 +3,15 @@
     android:layout_width="match_parent"
     android:layout_height="180dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@drawable/header">
+    android:id="@+id/header">
+
+    <ImageView
+        android:id="@+id/cover"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@color/blue1"
+        android:scaleType="centerCrop"
+        android:background="@color/blue1"/>
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/userImage"
@@ -14,8 +22,8 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:src="@drawable/avatar2"
-        app:civ_border_width="1dp"
-        app:civ_border_color="@color/black" />
+        app:civ_border_width="2dp"
+        app:civ_border_color="@color/white" />
 
     <TextView
         android:id="@+id/userName"
@@ -23,7 +31,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/userImage"
         android:text="Developer"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:layout_alignStart="@id/userImage"
         android:layout_marginTop="7dp"
         android:textSize="17sp"
@@ -35,7 +43,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/userName"
         android:text="eduplanet492@gmail.com"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:layout_alignStart="@id/userImage"
         android:layout_marginTop="4dp"
         android:textSize="16sp"

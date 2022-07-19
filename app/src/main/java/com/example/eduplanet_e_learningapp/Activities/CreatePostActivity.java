@@ -24,6 +24,7 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.EventListener;
+import com.google.firebase.firestore.FieldValue;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.storage.FirebaseStorage;
@@ -47,6 +48,7 @@ public class CreatePostActivity extends AppCompatActivity {
     ProgressDialog dialog;
 
     ActivityCreatePostBinding binding;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -61,7 +63,7 @@ public class CreatePostActivity extends AppCompatActivity {
         firestore.collection("User").document(auth.getUid()).addSnapshotListener(new EventListener<DocumentSnapshot>() {
             @Override
             public void onEvent(DocumentSnapshot value, FirebaseFirestoreException error) {
-                if (value.exists()){
+                if (value.exists()) {
                     User user = value.toObject(User.class);
                     postingUsername = user.getUsername();
                     postingUserImage = user.getUserImage();
@@ -82,7 +84,7 @@ public class CreatePostActivity extends AppCompatActivity {
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
                 String caption = binding.postCaption.getText().toString();
 
-                if (!caption.isEmpty()){
+                if (!caption.isEmpty()) {
                     isCaptionNull = false;
                 } else {
                     isCaptionNull = true;
@@ -104,7 +106,7 @@ public class CreatePostActivity extends AppCompatActivity {
                 Intent intent = new Intent();
                 intent.setAction(Intent.ACTION_GET_CONTENT);
                 intent.setType("image/*");
-                startActivityForResult(intent,IMAGE_PICKER_CODE);
+                startActivityForResult(intent, IMAGE_PICKER_CODE);
             }
         });
 
@@ -119,7 +121,7 @@ public class CreatePostActivity extends AppCompatActivity {
                 dialog.show();
 
                 final StorageReference reference = storage.getReference().child("User Posts Images")
-                        .child(auth.getCurrentUser().getUid()).child(new Date().getTime()+"");
+                        .child(auth.getCurrentUser().getUid()).child(new Date().getTime() + "");
 
                 reference.putFile(uri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                     @Override
@@ -137,17 +139,24 @@ public class CreatePostActivity extends AppCompatActivity {
 
                                 firestore.collection("Post").document(docId).set(post)
                                         .addOnSuccessListener(new OnSuccessListener<Void>() {
-                                    @Override
-                                    public void onSuccess(Void unused) {
-                                        dialog.dismiss();
-                                        finish();
-                                        Toast.makeText(CreatePostActivity.this, "Posted Successfully", Toast.LENGTH_SHORT).show();
-                                    }
-                                }).addOnFailureListener(new OnFailureListener() {
+                                            @Override
+                                            public void onSuccess(Void unused) {
+                                                firestore.collection("User").document(auth.getUid())
+                                                        .update("noOfPost", FieldValue.increment(1))
+                                                        .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                                            @Override
+                                                            public void onSuccess(Void unused) {
+                                                                dialog.dismiss();
+                                                                finish();
+                                                                Toast.makeText(CreatePostActivity.this, "Posted Successfully", Toast.LENGTH_SHORT).show();
+                                                            }
+                                                        });
+                                            }
+                                        }).addOnFailureListener(new OnFailureListener() {
                                     @Override
                                     public void onFailure(@NonNull @NotNull Exception e) {
                                         dialog.dismiss();
-                                        Toast.makeText(CreatePostActivity.this, ""+e.getMessage(), Toast.LENGTH_SHORT).show();
+                                        Toast.makeText(CreatePostActivity.this, "" + e.getMessage(), Toast.LENGTH_SHORT).show();
                                     }
                                 });
 
@@ -155,14 +164,14 @@ public class CreatePostActivity extends AppCompatActivity {
                         }).addOnFailureListener(new OnFailureListener() {
                             @Override
                             public void onFailure(@NonNull @NotNull Exception e) {
-                                Log.d("TAGG",e.getMessage());
+                                Log.d("TAGG", e.getMessage());
                             }
                         });
                     }
                 }).addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull @NotNull Exception e) {
-                        Log.d("TAGG",e.getMessage());
+                        Log.d("TAGG", e.getMessage());
                     }
                 });
 
@@ -182,7 +191,7 @@ public class CreatePostActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, @Nullable @org.jetbrains.annotations.Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        if (data.getData() != null && requestCode == IMAGE_PICKER_CODE ){
+        if (data.getData() != null && requestCode == IMAGE_PICKER_CODE) {
             uri = data.getData();
             Glide.with(this).load(uri).into(binding.postImage);
             binding.postImage.setVisibility(View.VISIBLE);
@@ -195,7 +204,7 @@ public class CreatePostActivity extends AppCompatActivity {
     }
 
     private void enablePostBtn() {
-        if (!isPostImageNull){
+        if (!isPostImageNull) {
             binding.postBtn.setBackgroundColor(getResources().getColor(R.color.blue1));
             binding.postBtn.setEnabled(true);
         } else {

@@ -35,6 +35,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.EventListener;
+import com.google.firebase.firestore.FieldValue;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.firestore.QuerySnapshot;
@@ -275,9 +276,17 @@ public class AskDoubtActivity extends AppCompatActivity {
             firestore.collection("Doubt").document(docId).set(doubt).addOnSuccessListener(new OnSuccessListener<Void>() {
                 @Override
                 public void onSuccess(Void unused) {
-                    dialog.hide();
-                    Toast.makeText(AskDoubtActivity.this, "Doubt Posted", Toast.LENGTH_SHORT).show();
-                    finish();
+
+                    firestore.collection("User").document(auth.getUid())
+                            .update("noOfDoubts", FieldValue.increment(1))
+                            .addOnSuccessListener(new OnSuccessListener<Void>() {
+                        @Override
+                        public void onSuccess(Void unused) {
+                            dialog.hide();
+                            Toast.makeText(AskDoubtActivity.this, "Doubt Posted", Toast.LENGTH_SHORT).show();
+                            finish();
+                        }
+                    });
                 }
             });
         }

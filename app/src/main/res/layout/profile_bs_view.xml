@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/profile_bottomsheet"
+    android:orientation="vertical"
+    android:padding="5dp"
+    android:background="@color/white"
+    app:behavior_hideable="true"
+    app:behavior_peekHeight="16dp"
+    app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+
+    <TextView
+        android:id="@+id/editCover"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Edit Cover"
+        android:textSize="16sp"
+        android:textColor="@color/textColor1"
+        android:fontFamily="@font/roboto_medium"
+        android:padding="5dp"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/lineColor"/>
+
+    <TextView
+        android:id="@+id/editProfile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Edit Profile"
+        android:textSize="16sp"
+        android:textColor="@color/textColor1"
+        android:fontFamily="@font/roboto_medium"
+        android:padding="5dp"/>
+
+</LinearLayout>

@@ -65,5 +65,6 @@ dependencies {
     implementation 'com.github.sharish:ShimmerRecyclerView:v1.3'
     implementation 'com.github.Drjacky:ImagePicker:2.1.14'
     implementation 'com.github.jama5262:CarouselView:1.2.2'
+    implementation 'com.github.joielechong:countrycodepicker:2.4.2'
 
 }

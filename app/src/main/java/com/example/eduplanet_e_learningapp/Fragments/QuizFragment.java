@@ -8,13 +8,19 @@ import android.view.ViewGroup;
 import androidx.fragment.app.Fragment;
 
 import com.example.eduplanet_e_learningapp.R;
+import com.example.eduplanet_e_learningapp.databinding.FragmentQuizBinding;
 
 public class QuizFragment extends Fragment {
 
+    FragmentQuizBinding binding;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_quiz, container, false);
+        binding = FragmentQuizBinding.inflate(inflater,container,false);
+
+
+
+        return binding.getRoot();
     }
 }
